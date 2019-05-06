@@ -3,7 +3,16 @@
 
     <!-- Generic -->
     <string name="generic_no_connection">Voce está sem internet no momento</string>
+
+    <!-- Progress Dialog-->
     <string name="progress_dialog_header_textview">Carregando</string>
     <string name="progress_dialog_text_textview">Por favor aguarde</string>
+
+    <!-- Main -->
+    <string name="main_search_icon_imageview">Icone de busca</string>
+    <string name="main_title_textview">Meus Filmes</string>
+
+    <!-- Item Main Moive List-->
+    <string name="item_movie_separator_textview">-</string>
 
 </resources>

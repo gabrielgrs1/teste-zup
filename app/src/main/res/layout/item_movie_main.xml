@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/item_movie_movie_name_textview"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="16dp"
+            android:textColor="@color/colorDarkBlue"
+            tools:text="A era do gelo"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/item_movie_separator_textview"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/item_movie_movie_name_textview"
+            app:layout_constraintStart_toEndOf="@+id/item_movie_movie_name_textview"
+            android:textSize="14dp"
+            android:textStyle="italic|bold"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/colorLightGreen"
+            android:text="@string/item_movie_separator_textview"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/item_movie_movie_year_release_textview"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/item_movie_movie_name_textview"
+            app:layout_constraintBottom_toBottomOf="@+id/item_movie_movie_name_textview"
+            app:layout_constraintStart_toEndOf="@+id/item_movie_separator_textview"
+            android:layout_marginStart="4dp"
+            android:textSize="14dp"
+            android:textStyle="italic|bold"
+            android:textColor="@color/colorLightGreen"
+            tools:text="(1997)"
+            android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

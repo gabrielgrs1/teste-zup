@@ -15,7 +15,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "BASE_URL", BASE_URL)
         buildConfigField("String", "API_KEY", API_KEY)
-        buildConfigField("String", "I_QUERY_PARAMETER", I_QUERY_PARAMETER)
     }
     buildTypes {
         release {
