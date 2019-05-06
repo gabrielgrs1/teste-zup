@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ZUP Test</string>
+
+    <!-- Generic -->
+    <string name="generic_no_connection">Voce está sem internet no momento</string>
+    <string name="progress_dialog_header_textview">Carregando</string>
+    <string name="progress_dialog_text_textview">Por favor aguarde</string>
+
+</resources>
