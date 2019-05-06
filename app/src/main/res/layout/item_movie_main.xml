@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"/>
 
     <TextView
-            android:id="@+id/item_movie_movie_year_release_textview"
+            android:id="@+id/item_movie_release_year_textview"
             android:layout_width="wrap_content"
             app:layout_constraintTop_toTopOf="@+id/item_movie_movie_name_textview"
             app:layout_constraintBottom_toBottomOf="@+id/item_movie_movie_name_textview"

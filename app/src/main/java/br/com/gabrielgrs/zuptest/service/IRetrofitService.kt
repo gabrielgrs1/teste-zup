@@ -2,6 +2,7 @@ package br.com.gabrielgrs.zuptest.service
 
 import br.com.gabrielgrs.zuptest.model.movie.MovieDto
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 /**
  * Created by gabrielgrs
@@ -12,5 +13,5 @@ import retrofit2.http.GET
 interface IRetrofitService {
 
     @GET("/")
-    fun searchMovie(): List<MovieDto>
+    fun searchMovieByTitle(@Query("t") movieTitle: String): List<MovieDto>
 }

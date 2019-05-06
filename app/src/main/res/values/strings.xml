@@ -11,6 +11,7 @@
     <!-- Main -->
     <string name="main_search_icon_imageview">Icone de busca</string>
     <string name="main_title_textview">Meus Filmes</string>
+    <string name="main_movies_not_found_toast">Não foi encontrado nenhum filme</string>
 
     <!-- Item Main Moive List-->
     <string name="item_movie_separator_textview">-</string>

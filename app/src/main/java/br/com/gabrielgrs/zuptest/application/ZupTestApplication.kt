@@ -3,6 +3,7 @@ package br.com.gabrielgrs.zuptest.application
 import android.app.Application
 import android.content.Context
 import br.com.gabrielgrs.zuptest.service.RetrofitConfig
+import com.orhanobut.hawk.Hawk
 
 
 /**
@@ -29,6 +30,7 @@ class ZupTestApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         RetrofitConfig().configureRetrofit()
+        Hawk.init(applicationContext).build()
     }
 
 

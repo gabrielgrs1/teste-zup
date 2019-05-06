@@ -9,29 +9,34 @@ import java.io.Serializable
  * Project: ZUPTest
  */
 data class MovieDto(
-    private var title: String?,
-    private var year: String?,
-    private var rated: String?,
-    private var released: String?,
-    private var runtime: String?,
-    private var genre: String?,
-    private var director: String?,
-    private var writer: String?,
-    private var actors: String?,
-    private var plot: String?,
-    private var language: String?,
-    private var country: String?,
-    private var awards: String?,
-    private var poster: String?,
-    private var ratings: List<RatingDto>,
-    private var metascore: String?,
-    private var imdbRating: String?,
-    private var imdbVotes: String?,
-    private var imdbID: String?,
-    private var type: String?,
-    private var dVD: String?,
-    private var boxOffice: String?,
-    private var production: String?,
-    private var website: String?,
-    private var response: String?
-) : Serializable
+    var title: String?,
+    var year: String?,
+    var rated: String?,
+    var released: String?,
+    var runtime: String?,
+    var genre: String?,
+    var director: String?,
+    var writer: String?,
+    var actors: String?,
+    var plot: String?,
+    var language: String?,
+    var country: String?,
+    var awards: String?,
+    var poster: String?,
+    var ratings: List<RatingDto>,
+    var metascore: String?,
+    var imdbRating: String?,
+    var imdbVotes: String?,
+    var imdbID: String?,
+    var type: String?,
+    var dVD: String?,
+    var boxOffice: String?,
+    var production: String?,
+    var website: String?,
+    var response: String?
+) : Serializable {
+
+    companion object {
+        const val MOVIE_LIST_KEY = "movie_list"
+    }
+}

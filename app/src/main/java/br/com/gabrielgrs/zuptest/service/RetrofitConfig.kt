@@ -47,7 +47,6 @@ class RetrofitConfig {
 
             val url = originalHttpUrl.newBuilder()
                 .addQueryParameter("apiKey", BuildConfig.API_KEY)
-                .addQueryParameter("i", BuildConfig.I_QUERY_PARAMETER)
                 .build()
 
             val requestBuilder = original.newBuilder()
