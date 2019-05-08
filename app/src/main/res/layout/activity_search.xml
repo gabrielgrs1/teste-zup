@@ -16,7 +16,8 @@
             android:background="@color/colorLightGreen"
             app:titleTextColor="@color/colorDarkBlue"
             app:subtitleTextColor="@color/colorDarkBlue"
-            app:title="@string/search_title_textview"
+            app:title="Zup Teste"
+            app:subtitle="@string/search_title_textview"
             android:padding="1dp"
             android:layout_height="wrap_content"/>
 
