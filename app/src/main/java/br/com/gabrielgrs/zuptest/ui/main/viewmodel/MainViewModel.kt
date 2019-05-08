@@ -3,8 +3,9 @@ package br.com.gabrielgrs.zuptest.ui.main.viewmodel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import br.com.gabrielgrs.zuptest.R
+import br.com.gabrielgrs.zuptest.application.ZupTestApplication
 import br.com.gabrielgrs.zuptest.model.movie.MovieDto
-import br.com.gabrielgrs.zuptest.utils.IGenericCallback
+import br.com.gabrielgrs.zuptest.utils.IGenerickCallback
 import br.com.gabrielgrs.zuptest.utils.getContext
 import com.orhanobut.hawk.Hawk
 
@@ -16,21 +17,21 @@ import com.orhanobut.hawk.Hawk
  */
 class MainViewModel : ViewModel() {
 
-    private lateinit var callback: IGenericCallback
+    private lateinit var callback: IGenerickCallback
     private val TAG = "MainViewModel"
 
-    fun setCallback(callback: IGenericCallback) {
+    fun setCallback(callback: IGenerickCallback) {
         this.callback = callback
     }
 
     fun getMovies(): MutableList<MovieDto> {
         var movieList: MutableList<MovieDto> = mutableListOf()
 
-        if (Hawk.get(MovieDto.MOVIE_LIST_KEY, mutableListOf<MovieDto>()).isNotEmpty()) {
-            movieList = Hawk.get(MovieDto.MOVIE_LIST_KEY)
+        if (Hawk.get(ZupTestApplication.MOVIE_LIST_KEY, mutableListOf<MovieDto>()).isNotEmpty()) {
+            movieList = Hawk.get(ZupTestApplication.MOVIE_LIST_KEY)
         } else {
             Log.e(TAG, "Nenhum filme encontrado!")
-            callback.onError(getContext().getString(R.string.main_movies_not_found_toast))
+            callback.onError(getContext().getString(R.string.generic_movie_not_found))
         }
 
         return movieList

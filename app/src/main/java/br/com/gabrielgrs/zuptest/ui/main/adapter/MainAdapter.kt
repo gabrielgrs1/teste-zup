@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.gabrielgrs.zuptest.R
 import br.com.gabrielgrs.zuptest.model.movie.MovieDto
 
-class MovieAdapter(
+class MainAdapter(
     private var moviesList: MutableList<MovieDto>,
     private var onMovieClickListener: (MovieDto) -> Unit
-) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

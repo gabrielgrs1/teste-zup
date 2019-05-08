@@ -7,29 +7,20 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.activity.MainActivity">
 
-
-    <TextView android:id="@+id/main_title_textview"
-              android:layout_width="wrap_content"
-              android:textSize="18dp"
-              android:textStyle="bold"
-              android:textColor="@color/colorDarkBlue"
-              app:layout_constraintTop_toTopOf="parent"
-              android:text="@string/main_title_textview"
-              android:layout_marginTop="@dimen/margin_top_default"
-              android:layout_height="wrap_content"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintEnd_toEndOf="parent"/>
-
-    <ImageView
-            android:id="@+id/main_search_icon_imageview"
-            android:src="@drawable/ic_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/margin_top_default"
-            android:layout_marginEnd="@dimen/margin_horizontaly_default"
-            android:contentDescription="@string/main_search_icon_imageview"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="0dp"
+            android:background="@color/colorLightGreen"
+            app:titleTextColor="@color/colorDarkBlue"
+            app:subtitleTextColor="@color/colorDarkBlue"
+            app:title="Zup Teste"
+            app:subtitle="Meus Filmes"
+            android:padding="1dp"
+            android:layout_height="wrap_content"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_movies_recyclerview"
@@ -42,7 +33,7 @@
             app:layout_constraintVertical_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_title_textview"
+            app:layout_constraintTop_toBottomOf="@id/main_toolbar"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="wrap_content"/>
 
