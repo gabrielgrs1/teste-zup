@@ -1,5 +1,6 @@
 package br.com.gabrielgrs.zuptest.model.movie
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
@@ -9,6 +10,6 @@ import java.io.Serializable
  * Project: ZUPTest
  */
 data class RatingDto(
-    private var source: String?,
-    private var value: String?
+    @SerializedName("Source") val source: String?,
+    @SerializedName("Value") val value: String?
 ) : Serializable

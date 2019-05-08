@@ -1,6 +1,7 @@
 package br.com.gabrielgrs.zuptest.service
 
 import br.com.gabrielgrs.zuptest.BuildConfig
+import br.com.gabrielgrs.zuptest.application.ZupTestApplication
 import br.com.gabrielgrs.zuptest.utils.Utils
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -19,20 +20,18 @@ import java.util.concurrent.TimeUnit
  */
 class RetrofitConfig {
 
-    private lateinit var retrofit: Retrofit
-
-    fun configureRetrofit() {
+    fun configureRetrofit(): Retrofit? {
         val logger = HttpLoggingInterceptor()
         logger.level = HttpLoggingInterceptor.Level.BODY
 
         val client = OkHttpClient.Builder()
-            .readTimeout(20, TimeUnit.SECONDS)
-            .connectTimeout(20, TimeUnit.SECONDS)
-            .writeTimeout(520, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(checkConnectionInterceptor())
             .addInterceptor(addQueryParameters()).build()
 
-        retrofit = Retrofit.Builder()
+        return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
@@ -66,9 +65,8 @@ class RetrofitConfig {
         }
     }
 
-    fun getRetrofit(): Retrofit {
-        return retrofit
+    fun getRetrofit(): IRetrofitService {
+        return ZupTestApplication.retrofit!!.create(IRetrofitService::class.java)
     }
-
 
 }

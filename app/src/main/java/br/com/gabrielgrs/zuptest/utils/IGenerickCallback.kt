@@ -6,6 +6,6 @@ package br.com.gabrielgrs.zuptest.utils
  * Time: 19:56
  * Project: ZUPTest
  */
-interface IGenericCallback {
+interface IGenerickCallback {
     fun onError(error: String)
 }

@@ -66,7 +66,7 @@ class GenericProgressDialog : androidx.fragment.app.DialogFragment() {
 
     companion object {
 
-        private const val TAG = "example_loading"
+        private const val TAG = "generic_loading"
         private var genericProgressDialog: GenericProgressDialog? = null
         private var show = false
 

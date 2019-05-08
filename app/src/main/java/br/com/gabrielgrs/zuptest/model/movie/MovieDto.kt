@@ -1,5 +1,6 @@
 package br.com.gabrielgrs.zuptest.model.movie
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
@@ -9,34 +10,29 @@ import java.io.Serializable
  * Project: ZUPTest
  */
 data class MovieDto(
-    var title: String?,
-    var year: String?,
-    var rated: String?,
-    var released: String?,
-    var runtime: String?,
-    var genre: String?,
-    var director: String?,
-    var writer: String?,
-    var actors: String?,
-    var plot: String?,
-    var language: String?,
-    var country: String?,
-    var awards: String?,
-    var poster: String?,
-    var ratings: List<RatingDto>,
-    var metascore: String?,
-    var imdbRating: String?,
-    var imdbVotes: String?,
-    var imdbID: String?,
-    var type: String?,
-    var dVD: String?,
-    var boxOffice: String?,
-    var production: String?,
-    var website: String?,
-    var response: String?
-) : Serializable {
-
-    companion object {
-        const val MOVIE_LIST_KEY = "movie_list"
-    }
-}
+    @SerializedName("Title") val title: String,
+    @SerializedName("Year") val year: String,
+    @SerializedName("Rated") val rated: String,
+    @SerializedName("Released") val released: String,
+    @SerializedName("Runtime") val runtime: String,
+    @SerializedName("Genre") val genre: String,
+    @SerializedName("Director") val director: String,
+    @SerializedName("Writer") val writer: String,
+    @SerializedName("Actors") val actors: String,
+    @SerializedName("Plot") val plot: String,
+    @SerializedName("Language") val language: String,
+    @SerializedName("Country") val country: String,
+    @SerializedName("Awards") val awards: String,
+    @SerializedName("Poster") val poster: String,
+    @SerializedName("Ratings") val ratings: List<RatingDto>,
+    @SerializedName("Metascore") val metascore: String,
+    @SerializedName("imdbRating") val imdbRating: String,
+    @SerializedName("imdbVotes") val imdbVotes: String,
+    @SerializedName("imdbID") val imdbId: String,
+    @SerializedName("Type") val type: String,
+    @SerializedName("DVD") val dvd: String,
+    @SerializedName("BoxOffice") val boxOffice: String,
+    @SerializedName("Production") val production: String,
+    @SerializedName("Website") val website: String,
+    @SerializedName("Response") val response: String
+) : Serializable

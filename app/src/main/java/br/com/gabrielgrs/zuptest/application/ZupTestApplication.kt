@@ -14,12 +14,11 @@ import com.orhanobut.hawk.Hawk
  */
 class ZupTestApplication : Application() {
 
-    init {
-        instance = this
-    }
-
     companion object {
+        const val MOVIE_LIST_KEY = "movie_list"
+
         private var instance: ZupTestApplication? = null
+        var retrofit = RetrofitConfig().configureRetrofit()
 
         fun applicationContext(): Context {
             return instance!!.applicationContext
@@ -29,7 +28,7 @@ class ZupTestApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        RetrofitConfig().configureRetrofit()
+        instance = this
         Hawk.init(applicationContext).build()
     }
 

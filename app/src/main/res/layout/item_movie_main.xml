@@ -27,7 +27,7 @@
             android:textStyle="italic|bold"
             android:layout_marginStart="4dp"
             android:textColor="@color/colorLightGreen"
-            android:text="@string/item_movie_separator_textview"
+            android:text="@string/generic_separator"
             android:layout_height="wrap_content"/>
 
     <TextView

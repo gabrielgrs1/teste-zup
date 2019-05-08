@@ -15,7 +15,7 @@ import br.com.gabrielgrs.zuptest.application.ZupTestApplication
 class Utils {
     fun isOnline(): Boolean {
         val connectivityManager =
-            ZupTestApplication().applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            ZupTestApplication.applicationContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val netInfo: NetworkInfo? = connectivityManager.activeNetworkInfo
         return netInfo != null && netInfo.isConnected
     }

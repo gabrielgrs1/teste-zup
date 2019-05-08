@@ -4,7 +4,6 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.pm.ActivityInfo
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -45,6 +44,5 @@ fun Activity.forceHideKeyboard() {
 
 fun Activity.initActivity(idLayout: Int) {
     this.setContentView(idLayout)
-    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
     requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 }
