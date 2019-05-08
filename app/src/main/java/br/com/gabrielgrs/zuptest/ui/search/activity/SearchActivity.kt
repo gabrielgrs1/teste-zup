@@ -107,7 +107,7 @@ class SearchActivity : AppCompatActivity(), IGenerickCallback {
 
     private fun getNextPageMovies() {
         viewModel.searchMovieByTitle(movieName, page).observe(this@SearchActivity, Observer { response ->
-            if (response != null && response.search != null && response.totalResults.toInt() > 0 && response.response == "True") {
+            if (response?.search != null && response.totalResults.toInt() > 0 && response.response == "True") {
                 sizePage = response.search.size
                 page++
                 movieList.addAll(response.search)
@@ -129,7 +129,7 @@ class SearchActivity : AppCompatActivity(), IGenerickCallback {
                 if (s!!.isNotEmpty()) {
                     movieName = s.toString()
                     viewModel.searchMovieByTitle(movieName, page).observe(this@SearchActivity, Observer { response ->
-                        if (response != null && response.search != null && response.totalResults.toInt() > 0 && response.response == "True") {
+                        if (response?.search != null && response.totalResults.toInt() > 0 && response.response == "True") {
                             sizePage = response.search.size
                             movieList.clear()
                             page = 1

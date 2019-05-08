@@ -7,7 +7,5 @@
 
     <color name="colorLightGreen">#a5c138</color>
     <color name="colorDarkGreen">#396534</color>
-    <color name="colorGray">#444</color>
-    <color name="colorLightBlue">#27cfc3</color>
     <color name="colorDarkBlue">#0f3750</color>
 </resources>

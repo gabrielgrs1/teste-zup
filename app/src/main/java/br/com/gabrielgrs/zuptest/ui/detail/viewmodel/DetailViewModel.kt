@@ -16,7 +16,7 @@ import com.orhanobut.hawk.Hawk
 class DetailViewModel : ViewModel() {
 
     private lateinit var callback: IGenerickCallback
-    private val TAG = "DetailViewModel"
+    private val tag = "DetailViewModel"
 
     fun setCallback(callback: IGenerickCallback) {
         this.callback = callback
@@ -29,7 +29,7 @@ class DetailViewModel : ViewModel() {
             movieList.add(movie)
             Hawk.put(ZupTestApplication.MOVIE_LIST_KEY, movieList)
         } else {
-            Log.e(TAG, "Filme já está salvo!")
+            Log.e(tag, "Filme já está salvo!")
 
         }
     }
@@ -41,21 +41,8 @@ class DetailViewModel : ViewModel() {
             movieList.remove(movie)
             Hawk.put(ZupTestApplication.MOVIE_LIST_KEY, movieList)
         } else {
-            Log.e(TAG, "Filme nao está na lista!")
+            Log.e(tag, "Filme nao está na lista!")
 
         }
-    }
-
-
-    fun getMovies(): MutableList<MovieDto> {
-        var movieList: MutableList<MovieDto> = mutableListOf()
-
-        if (Hawk.get(ZupTestApplication.MOVIE_LIST_KEY, mutableListOf<MovieDto>()).isNotEmpty()) {
-            movieList = Hawk.get(ZupTestApplication.MOVIE_LIST_KEY)
-        } else {
-            Log.e(TAG, "Nenhum filme encontrado!")
-        }
-
-        return movieList
     }
 }

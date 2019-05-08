@@ -3,10 +3,10 @@
 
     <!-- Generic -->
     <string name="generic_no_connection">Voce está sem internet no momento</string>
-    <string name="generic_separator">-</string>
     <string name="generic_server_error">Erro de servidor!</string>
     <string name="generic_movie_not_found">Não foi encontrado nenhum filme!</string>
     <string name="generic_error_get_movie">Erro ao carregar detalhes!</string>
+    <string name="generic_banner_content_description">Banner filme</string>
 
     <!-- Menu -->
     <string name="menu_item_search">Buscar</string>
@@ -17,10 +17,6 @@
     <string name="progress_dialog_header_textview">Carregando</string>
     <string name="progress_dialog_text_textview">Por favor aguarde</string>
 
-    <!-- Main -->
-    <string name="main_search_icon_imageview">Icone de busca</string>
-    <string name="main_title_textview">Meus Filmes</string>
-
     <!-- Search -->
     <string name="search_title_movie_edittext">Nome do filme</string>
     <string name="search_title_textview">Buscar Filme</string>
@@ -28,8 +24,8 @@
     <!-- Detail -->
     <string name="detail_movie_saved_toast">Filme salvo!</string>
     <string name="detail_movie_deleted_toast">Fime deletado!</string>
+    <string name="detail_plot_header_textview">Sinopse</string>
 
     <!-- Item movie search-->
     <string name="item_movie_search_release_date_textview">Ano de lançamento %1$s</string>
-    <string name="detail_plot_header_textview">Sinopse</string>
 </resources>

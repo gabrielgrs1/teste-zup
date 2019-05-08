@@ -47,6 +47,7 @@
 
 
             <ImageView
+                    android:contentDescription="@string/generic_banner_content_description"
                     android:id="@+id/detail_banner_imageview"
                     tools:src="@color/colorDarkGreen"
                     android:layout_marginTop="12dp"

@@ -23,7 +23,7 @@ class SearchViewModel : ViewModel() {
     private lateinit var searchMovieByTitleResponse: MutableLiveData<SearchDto>
     private lateinit var searchMovieByImdbIdResponse: MutableLiveData<MovieDto>
     private lateinit var mCallback: IGenerickCallback
-    private val TAG = "SearchViewModel"
+    private val tag = "SearchViewModel"
 
     fun setCallback(callback: IGenerickCallback) {
         this.mCallback = callback
@@ -38,12 +38,12 @@ class SearchViewModel : ViewModel() {
             }
 
             override fun onResponseErrorNotFound() {
-                Log.e(TAG, "Nenhum filme encontrado")
+                Log.e(tag, "Nenhum filme encontrado")
                 mCallback.onError(getContext().getString(R.string.generic_movie_not_found))
             }
 
             override fun onResponseError(message: String) {
-                Log.e(TAG, message)
+                Log.e(tag, message)
                 mCallback.onError(getContext().getString(R.string.generic_server_error))
             }
         })
@@ -60,12 +60,12 @@ class SearchViewModel : ViewModel() {
             }
 
             override fun onResponseErrorNotFound() {
-                Log.e(TAG, "Nenhum filme encontrado")
+                Log.e(tag, "Nenhum filme encontrado")
                 mCallback.onError(getContext().getString(R.string.generic_movie_not_found))
             }
 
             override fun onResponseError(message: String) {
-                Log.e(TAG, message)
+                Log.e(tag, message)
                 mCallback.onError(getContext().getString(R.string.generic_server_error))
             }
         })

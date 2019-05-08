@@ -18,7 +18,7 @@ import com.orhanobut.hawk.Hawk
 class MainViewModel : ViewModel() {
 
     private lateinit var callback: IGenerickCallback
-    private val TAG = "MainViewModel"
+    private val tag = "MainViewModel"
 
     fun setCallback(callback: IGenerickCallback) {
         this.callback = callback
@@ -30,7 +30,7 @@ class MainViewModel : ViewModel() {
         if (Hawk.get(ZupTestApplication.MOVIE_LIST_KEY, mutableListOf<MovieDto>()).isNotEmpty()) {
             movieList = Hawk.get(ZupTestApplication.MOVIE_LIST_KEY)
         } else {
-            Log.e(TAG, "Nenhum filme encontrado!")
+            Log.e(tag, "Nenhum filme encontrado!")
             callback.onError(getContext().getString(R.string.generic_movie_not_found))
         }
 
