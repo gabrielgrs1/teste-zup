@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import br.com.gabrielgrs.zuptest.R
 import br.com.gabrielgrs.zuptest.model.moviesearch.MovieSearchDto
 import br.com.gabrielgrs.zuptest.ui.detail.activity.DetailActivity
@@ -17,11 +18,15 @@ import br.com.gabrielgrs.zuptest.utils.*
 import kotlinx.android.synthetic.main.activity_search.*
 import org.jetbrains.anko.intentFor
 
+
 class SearchActivity : AppCompatActivity(), IGenerickCallback {
 
 
     private lateinit var viewModel: SearchViewModel
     private lateinit var mAdapter: SearchAdapter
+    private lateinit var movieName: String
+    private var page = 1
+    private var sizePage = 0
     private var movieList: MutableList<MovieSearchDto> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +63,7 @@ class SearchActivity : AppCompatActivity(), IGenerickCallback {
         initViewModel()
         initListeners()
         initRecyclerView()
+        configureSearchPager()
     }
 
     private fun initRecyclerView() {
@@ -88,6 +94,29 @@ class SearchActivity : AppCompatActivity(), IGenerickCallback {
         initOnTextChangeListener()
     }
 
+    private fun configureSearchPager() {
+        search_movies_recyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (search_movies_recyclerview.canScrollVertically(1) && sizePage == 10) {
+                    getNextPageMovies()
+                }
+            }
+        })
+    }
+
+    private fun getNextPageMovies() {
+        viewModel.searchMovieByTitle(movieName, page).observe(this@SearchActivity, Observer { response ->
+            if (response != null && response.search != null && response.totalResults.toInt() > 0 && response.response == "True") {
+                sizePage = response.search.size
+                page++
+                movieList.addAll(response.search)
+                mAdapter.notifyDataSetChanged()
+            }
+
+        })
+    }
+
     private fun initOnTextChangeListener() {
         search_title_movie_inputlayout.editText!!.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -98,18 +127,15 @@ class SearchActivity : AppCompatActivity(), IGenerickCallback {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s!!.isNotEmpty()) {
-                    val movieName = s.toString()
-                    viewModel.searchMovieByTitle(movieName).observe(this@SearchActivity, Observer { response ->
-                        if (response != null && response.search != null
-                            && response.totalResults.toInt() > 0 && response.response == "True"
-                        ) {
+                    movieName = s.toString()
+                    viewModel.searchMovieByTitle(movieName, page).observe(this@SearchActivity, Observer { response ->
+                        if (response != null && response.search != null && response.totalResults.toInt() > 0 && response.response == "True") {
+                            sizePage = response.search.size
                             movieList.clear()
+                            page = 1
                             movieList.addAll(response.search)
-
                             mAdapter.notifyDataSetChanged()
                         }
-                        //TODO implementar scroll pra pegar as outras paginas
-                        //TODO Quando a requisicao tiver menos de 10 resultados é pq nao tem mais pagina pra frente
 
                     })
                 }

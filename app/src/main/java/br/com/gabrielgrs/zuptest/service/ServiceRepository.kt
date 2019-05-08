@@ -15,8 +15,8 @@ import java.net.HttpURLConnection
  */
 class ServiceRepository {
 
-    fun searchMovieByTitle(movieTitle: String, listener: RetrofitResponse<SearchDto>) {
-        val call: Call<SearchDto> = RetrofitConfig().getRetrofit().searchMovieByTitle(movieTitle)
+    fun searchMovieByTitle(movieTitle: String, page: Int, listener: RetrofitResponse<SearchDto>) {
+        val call: Call<SearchDto> = RetrofitConfig().getRetrofit().searchMovieByTitle(movieTitle, page)
 
         call.enqueue(object : Callback<SearchDto> {
             override fun onFailure(call: Call<SearchDto>, t: Throwable) {

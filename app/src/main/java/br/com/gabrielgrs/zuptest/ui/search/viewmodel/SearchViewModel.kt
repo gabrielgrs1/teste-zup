@@ -29,10 +29,10 @@ class SearchViewModel : ViewModel() {
         this.mCallback = callback
     }
 
-    fun searchMovieByTitle(movieTitle: String?): LiveData<SearchDto> {
+    fun searchMovieByTitle(movieTitle: String?, page : Int): LiveData<SearchDto> {
         searchMovieByTitleResponse = MutableLiveData()
 
-        ServiceRepository().searchMovieByTitle(movieTitle!!, object : RetrofitResponse<SearchDto> {
+        ServiceRepository().searchMovieByTitle(movieTitle!!, page, object : RetrofitResponse<SearchDto> {
             override fun onResponseSuccess(response: SearchDto?) {
                 searchMovieByTitleResponse.value = response
             }

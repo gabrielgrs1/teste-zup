@@ -15,7 +15,8 @@ import retrofit2.http.Query
 interface IRetrofitService {
 
     @GET("/")
-    fun searchMovieByTitle(@Query("s") movieTitle: String): Call<SearchDto>
+    fun searchMovieByTitle(@Query("s") movieTitle: String,
+                           @Query("page") page: Int): Call<SearchDto>
 
     @GET("/")
     fun searchMovieByImdbId(@Query("i") movieImdbId: String): Call<MovieDto>
