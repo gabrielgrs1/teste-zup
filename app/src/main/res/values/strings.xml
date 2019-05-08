@@ -28,4 +28,8 @@
     <!-- Detail -->
     <string name="detail_movie_saved_toast">Filme salvo!</string>
     <string name="detail_movie_deleted_toast">Fime deletado!</string>
+
+    <!-- Item movie search-->
+    <string name="item_movie_search_release_date_textview">Ano de lançamento %1$s</string>
+    <string name="detail_plot_header_textview">Sinopse</string>
 </resources>

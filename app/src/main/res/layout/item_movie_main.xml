@@ -5,43 +5,58 @@
         android:orientation="vertical"
         android:layout_marginBottom="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="140dp">
+
+    <ImageView
+            tools:src="@color/colorDarkGreen"
+            android:id="@+id/item_movie_main_banner_imageview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="100dp"
+            android:layout_height="140dp"/>
 
     <TextView
-            android:id="@+id/item_movie_movie_name_textview"
+            android:id="@+id/item_movie_main_title_textview"
             android:layout_width="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textColor="@color/colorDarkBlue"
             tools:text="A era do gelo"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/item_movie_main_release_year_textview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_movie_main_banner_imageview"/>
 
     <TextView
-            android:id="@+id/item_movie_separator_textview"
+            android:id="@+id/item_movie_main_release_year_textview"
             android:layout_width="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="italic|bold"
+            android:textColor="@color/colorLightGreen"
+            tools:text="Ano lancamento (1997)"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/item_movie_movie_name_textview"
-            app:layout_constraintStart_toEndOf="@+id/item_movie_movie_name_textview"
-            android:textSize="14dp"
-            android:textStyle="italic|bold"
-            android:layout_marginStart="4dp"
-            android:textColor="@color/colorLightGreen"
-            android:text="@string/generic_separator"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-            android:id="@+id/item_movie_release_year_textview"
+            android:id="@+id/item_movie_main_genre_textview"
+            tools:text="Action, Adventure, Fantasy, Sci-Fi"
+            android:textSize="10dp"
+            android:textStyle="italic"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_movie_main_title_textview"
+            app:layout_constraintStart_toStartOf="@id/item_movie_main_title_textview"
             android:layout_width="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/item_movie_movie_name_textview"
-            app:layout_constraintBottom_toBottomOf="@+id/item_movie_movie_name_textview"
-            app:layout_constraintStart_toEndOf="@+id/item_movie_separator_textview"
-            android:layout_marginStart="4dp"
-            android:textSize="14dp"
-            android:textStyle="italic|bold"
-            android:textColor="@color/colorLightGreen"
-            tools:text="(1997)"
             android:layout_height="wrap_content"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

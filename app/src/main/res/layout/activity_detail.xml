@@ -40,7 +40,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:id="@+id/detail_title_textview"
                     android:layout_width="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="18dp"
                     android:textStyle="bold"
                     android:textColor="@color/colorDarkBlue"
                     android:layout_height="wrap_content"/>
@@ -59,10 +59,23 @@
                     android:layout_height="300dp"/>
 
             <TextView
-                    android:id="@+id/detail_plot_textview"
-                    tools:text="The Driver now carries an arrogant rock star who is visiting a major city (not Pittsburgh as earlier believed). Played by Madonna, this title character wants to get away from her bodyguards..."
-                    android:layout_marginTop="@dimen/margin_top_default"
                     app:layout_constraintTop_toBottomOf="@id/detail_banner_imageview"
+                    android:id="@+id/detail_plot_header_textview"
+                    android:text="@string/detail_plot_header_textview"
+                    android:textSize="16dp"
+                    android:layout_marginTop="@dimen/margin_top_default"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/margin_horizontaly_default"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/colorDarkBlue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/detail_plot_textview"
+                    android:layout_marginTop="10dp"
+                    tools:text="The Driver now carries an arrogant rock star who is visiting a major city (not Pittsburgh as earlier believed). Played by Madonna, this title character wants to get away from her bodyguards..."
+                    app:layout_constraintTop_toBottomOf="@id/detail_plot_header_textview"
                     android:textColor="@color/colorDarkGreen"
                     android:textSize="14dp"
                     android:layout_marginEnd="@dimen/margin_horizontaly_default"

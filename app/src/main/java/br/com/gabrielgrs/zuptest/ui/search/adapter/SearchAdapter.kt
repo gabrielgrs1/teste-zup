@@ -50,7 +50,10 @@ class SearchAdapter(
             loadImage(context, movie.poster)
 
             mTitleTextView!!.text = movie.title
-            mReleaseYearTextView!!.text = movie.year
+
+            val yearRelease =
+                ZupTestApplication.applicationContext().getString(R.string.item_movie_search_release_date_textview, movie.year)
+            mReleaseYearTextView!!.text = yearRelease
         }
 
         private fun loadImage(context: Context, moviePoster: String?) {

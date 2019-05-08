@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity(), IGenerickCallback {
 
     private fun initRecyclerView() {
         val recyclerView = main_movies_recyclerview
-        recyclerView.adapter = MainAdapter(viewModel.getMovies(), onMovieClickListener())
+        recyclerView.adapter = MainAdapter(this, viewModel.getMovies(), onMovieClickListener())
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
