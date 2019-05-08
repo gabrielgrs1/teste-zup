@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.gabrielgrs.zuptest.R
+import br.com.gabrielgrs.zuptest.application.ZupTestApplication
 import br.com.gabrielgrs.zuptest.model.moviesearch.MovieSearchDto
 import com.bumptech.glide.Glide
 
@@ -53,9 +54,15 @@ class SearchAdapter(
         }
 
         private fun loadImage(context: Context, moviePoster: String?) {
-            Glide.with(context)
-                .load(moviePoster)
-                .into(mBannerImageView)
+            if (moviePoster == "N/A") {
+                mBannerImageView!!.setImageDrawable(ZupTestApplication.applicationContext().getDrawable(R.drawable.error_image))
+            } else {
+                Glide.with(context)
+                    .load(moviePoster)
+                    .thumbnail(.1f)
+                    .into(mBannerImageView)
+            }
+
         }
 
     }

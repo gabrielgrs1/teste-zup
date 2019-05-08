@@ -96,9 +96,14 @@ class DetailActivity : AppCompatActivity(), IGenerickCallback {
     }
 
     private fun setBanner() {
-        Glide.with(this)
-            .load(movie.poster)
-            .into(detail_banner_imageview)
+        if (movie.poster == "N/A") {
+            detail_banner_imageview.setImageDrawable(getDrawable(R.drawable.error_image))
+        } else {
+            Glide.with(this)
+                .load(movie.poster)
+                .thumbnail(0.1f)
+                .into(detail_banner_imageview)
+        }
     }
 
     private fun setTexts() {
