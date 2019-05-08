@@ -1,10 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.detail.activity.DetailActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/detail_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:background="@color/colorLightGreen"
+            app:titleTextColor="@color/colorDarkBlue"
+            app:subtitleTextColor="@color/colorDarkBlue"
+            app:title="Zup Teste"
+            app:subtitle="Detalhes"
+            android:padding="1dp"
+            android:layout_height="wrap_content"/>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                    android:layout_marginTop="12dp"
+                    tools:text="A era do gelo (1998)"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/detail_title_textview"
+                    android:layout_width="wrap_content"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkBlue"
+                    android:layout_height="wrap_content"/>
+
+
+            <ImageView
+                    android:id="@+id/detail_banner_imageview"
+                    tools:src="@color/colorDarkGreen"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="@dimen/margin_horizontaly_default"
+                    android:layout_marginEnd="@dimen/margin_horizontaly_default"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_title_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"/>
+
+            <TextView
+                    android:id="@+id/detail_plot_textview"
+                    tools:text="The Driver now carries an arrogant rock star who is visiting a major city (not Pittsburgh as earlier believed). Played by Madonna, this title character wants to get away from her bodyguards..."
+                    android:layout_marginTop="@dimen/margin_top_default"
+                    app:layout_constraintTop_toBottomOf="@id/detail_banner_imageview"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14dp"
+                    android:layout_marginEnd="@dimen/margin_horizontaly_default"
+                    android:layout_marginStart="@dimen/margin_horizontaly_default"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
