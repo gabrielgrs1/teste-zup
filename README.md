@@ -3,7 +3,7 @@
 - [Download Apk](https://drive.google.com/uc?authuser=0&id=1yfG73Pl4RiSKQfH98y2mvhiU5z_KEcmg&export=download)
 
 <p align="center">
-  <img src="https://i.imgur.com/FFcUBbv.gifv" alt="Demo app"
+  <img src="https://i.imgur.com/FFcUBbv.gif" alt="Demo app"
        width="400" height="750">
 </p>
 
