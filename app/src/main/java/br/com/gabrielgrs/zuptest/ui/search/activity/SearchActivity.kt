@@ -97,16 +97,20 @@ class SearchActivity : AppCompatActivity(), IGenerickCallback {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s!!.length > 2) {
+                if (s!!.isNotEmpty()) {
                     val movieName = s.toString()
                     viewModel.searchMovieByTitle(movieName).observe(this@SearchActivity, Observer { response ->
-                        response.let {
+                        if (response != null && response.search != null
+                            && response.totalResults.toInt() > 0 && response.response == "True"
+                        ) {
+                            movieList.clear()
                             movieList.addAll(response.search)
+
                             mAdapter.notifyDataSetChanged()
-                            //TODO implementar scroll pra pegar as outras paginas
-                            //TODO Arrumar crash quando digita mais um digito
-                            //TODO Quando a requisicao tiver menos de 10 resultados é pq nao tem mais pagina pra frente
                         }
+                        //TODO implementar scroll pra pegar as outras paginas
+                        //TODO Quando a requisicao tiver menos de 10 resultados é pq nao tem mais pagina pra frente
+
                     })
                 }
             }

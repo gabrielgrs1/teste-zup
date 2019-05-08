@@ -50,11 +50,14 @@
             tools:listitem="@layout/item_movie_search"
             android:layout_marginEnd="@dimen/margin_horizontaly_default"
             android:layout_marginStart="@dimen/margin_horizontaly_default"
+            app:layout_constraintVertical_bias="0.0"
             android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_title_movie_inputlayout"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="0dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
